@@ -1,30 +1,46 @@
 # git
 
-[![Build Status](https://travis-ci.org/sweeperio/git.svg?branch=master)](https://travis-ci.org/sweeperio/git)
+[![Build Status](https://travis-ci.org/sweeperio/chef-git.svg?branch=master)](https://travis-ci.org/sweeperio/chef-git)
 
 Install/configure git
 
 ## What This Does
 
-* Thing 1
-* Thing 2
-
-* Add the cookbook description here.
-* Add status badge once travis is setup
+* Installs git from source
 
 ## Attributes
 
 | attribute | description | default |
 |-----------|-------------|---------|
-| `node["git"]["value"]` | some description | `""` |
+| `node["git"]["version"]` | the version to install | `"2.7.0"` |
 
 ## Recipes
 
 ### git::default
 
-TODO: description
+Build and install the version of git specified by `node["git"]["version"]`
 
 **Usage:** add `recipe[git]` to your run list.
+
+## Resources
+
+### git_version
+
+Build and install a version of git.
+
+#### Properties
+
+| property | description | value |
+|----------|-------------|-------|
+| version | the version to install | The name of the resource |
+
+**Usage**
+
+```ruby
+# in a recipe or resource
+git_version("2.7.0")
+```
+
 
 ## License
 
