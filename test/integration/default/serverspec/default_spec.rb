@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "git" do
+describe "swpr_git" do
   EXECUTABLES = %w(git git-cvsserver gitk git-receive-pack git-shell git-upload-archive git-upload-pack).freeze
 
   EXECUTABLES.each do |executable|

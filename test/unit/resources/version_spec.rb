@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: git
+# Cookbook Name:: swpr_git
 # Spec:: default
 #
 # The MIT License (MIT)
@@ -24,17 +24,17 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-describe "git_version resource" do
+describe "swpr_git_version resource" do
   cached(:chef_run) do
-    runner = ChefSpec::SoloRunner.new(step_into: %w(git_version)) do |node|
-      node.set["git"]["version"] = "2.7.0"
+    runner = ChefSpec::SoloRunner.new(step_into: %w(swpr_git_version)) do |node|
+      node.set["swpr_git"]["version"] = "2.7.0"
     end
 
-    runner.converge("git::default")
+    runner.converge("swpr_git::default")
   end
 
   it "installs prequisite packages" do
-    resource = chef_run.find_resource(:git_version, chef_run.node.attr!("git", "version"))
+    resource = chef_run.find_resource(:swpr_git_version, chef_run.node.attr!("swpr_git", "version"))
     resource.class::PREREQUISITES.each do |package|
       expect(chef_run).to install_package(package)
     end
@@ -42,7 +42,7 @@ describe "git_version resource" do
 
   it "makes and installs git" do
     expect(chef_run).to install_with_make_ark("git").with(
-      version: chef_run.node.attr!("git", "version"),
+      version: chef_run.node.attr!("swpr_git", "version"),
       make_opts: %w(prefix=/usr/local)
     )
   end

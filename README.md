@@ -1,6 +1,6 @@
-# git
+# swpr_git
 
-[![Build Status](https://travis-ci.org/sweeperio/chef-git.svg?branch=master)](https://travis-ci.org/sweeperio/chef-git)
+[![Build Status](https://travis-ci.org/sweeperio/chef-swpr_git.svg?branch=master)](https://travis-ci.org/sweeperio/chef-swpr_git)
 
 Install/configure git
 
@@ -12,19 +12,19 @@ Install/configure git
 
 | attribute | description | default |
 |-----------|-------------|---------|
-| `node["git"]["version"]` | the version to install | `"2.7.0"` |
+| `node["swpr_git"]["version"]` | the version to install | `"2.7.0"` |
 
 ## Recipes
 
 ### git::default
 
-Build and install the version of git specified by `node["git"]["version"]`
+Build and install the version of git specified by `node["swpr_git"]["version"]`
 
-**Usage:** add `recipe[git]` to your run list.
+**Usage:** add `recipe[swpr_git]` to your run list.
 
 ## Resources
 
-### git_version
+### swpr_git_version
 
 Build and install a version of git.
 
@@ -38,7 +38,7 @@ Build and install a version of git.
 
 ```ruby
 # in a recipe or resource
-git_version("2.7.0")
+swpr_git_version("2.7.0")
 ```
 
 

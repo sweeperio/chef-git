@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: git
+# Cookbook Name:: swpr_git
 # Recipe:: default
 #
 # The MIT License (MIT)
@@ -27,4 +27,4 @@
 include_recipe "apt"
 include_recipe "build-essential"
 
-git_version(node.attr!("git", "version"))
+swpr_git_version(node.attr!("swpr_git", "version"))

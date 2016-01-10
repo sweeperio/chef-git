@@ -1,5 +1,5 @@
 # rubocop:disable Style/SingleSpaceBeforeFirstArg
-name             "git"
+name             "swpr_git"
 maintainer       "sweeper.io"
 maintainer_email "developers@sweeper.io"
 license          "mit"
@@ -13,8 +13,8 @@ supports "ubuntu"
 depends "apt",              "~> 2.0"
 depends "ark",              "~> 0.9"
 depends "build-essential",  "~> 2.0"
-depends "core",             "~> 0.0"
+depends "swpr_core",        "~> 0.0"
 
 chef_version ">= 12.5" if respond_to?(:chef_version)
-source_url "https://github.com/sweeperio/chef-git" if respond_to?(:source_url)
-issues_url "https://github.com/sweeperio/chef-git/issues" if respond_to?(:issues_url)
+source_url "https://github.com/sweeperio/chef-swpr_git" if respond_to?(:source_url)
+issues_url "https://github.com/sweeperio/chef-swpr_git/issues" if respond_to?(:issues_url)

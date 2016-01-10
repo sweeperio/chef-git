@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: git
+# Cookbook Name:: swpr_git
 # Spec:: default
 #
 # The MIT License (MIT)
@@ -24,10 +24,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-describe "git::default" do
+describe "swpr_git::default" do
   cached(:chef_run) do
     runner = ChefSpec::SoloRunner.new do |node|
-      node.set["git"]["version"] = "2.7.0"
+      node.set["swpr_git"]["version"] = "2.7.0"
     end
 
     runner.converge(described_recipe)
@@ -38,6 +38,6 @@ describe "git::default" do
   end
 
   it "should install git" do
-    expect(chef_run).to install_git_version(chef_run.node.attr!("git", "version"))
+    expect(chef_run).to install_git_version(chef_run.node.attr!("swpr_git", "version"))
   end
 end
